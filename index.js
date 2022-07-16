@@ -21,7 +21,7 @@ function computer() {
 
 
 function send() { // =============================== WORKS JUST FINE ============================
- var computerChoice = [Math.floor(Math.random() * 2)];
+ var computerChoice = [Math.floor(Math.random() * 3)];
 
  if (computerChoice == 0) {
     computerChoice = possibility1;
