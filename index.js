@@ -2,9 +2,25 @@ const possibility1 = "rock";
 const possibility2 = "paper";
 const possibility3 = "scissors";
 
+/* ======================== DIDN'T WORK ===============
+function computer() { 
+    var computerChoice = [Math.floor(Math.random() * 2)];
+
+    if (computerChoice == 0) {
+       computerChoice = possibility1;
+       document.getElementById("computer").innerHTML = computerChoice;
+    } else if (computerChoice == 1) {
+       computerChoice = possibility2;
+       document.getElementById("computer").innerHTML = computerChoice;
+    } else if (computerChoice == 2) {
+       computerChoice = possibility3
+       document.getElementById("computer").innerHTML = computerChoice;
+    }
+
+}*/
 
 
-function send() {
+function send() { // =============================== WORKS JUST FINE ============================
  var computerChoice = [Math.floor(Math.random() * 2)];
 
  if (computerChoice == 0) {
@@ -18,12 +34,8 @@ function send() {
     document.getElementById("computer").innerHTML = computerChoice;
  }
 
-
-
-
 var userTyped = document.getElementById("user").value;
     
-
    if (((user.value).toLowerCase() != possibility1) && ((user.value).toLowerCase() != possibility2) && ((user.value).toLowerCase() != possibility3)) {
     window.alert("Please refresh the page and choose between 'Rock', 'Paper' or 'Scissors'")
    } else if ((user.value).toLowerCase() == possibility1 && computerChoice == possibility1) {
