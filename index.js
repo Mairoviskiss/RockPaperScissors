@@ -1,9 +1,7 @@
-const userChoice = document.getElementById('user');
-const result = document.getElementById('result');
 const possibility1 = "rock";
 const possibility2 = "paper";
 const possibility3 = "scissors";
-const chosen = document.querySelector('choice');
+
 
 
 function send() {
@@ -23,8 +21,10 @@ function send() {
  }
 
     var userTyped = document.getElementById("user").value;
-   
-    if ((user.value).toLowerCase() == possibility1 && computerChoice == 0) {
+
+   if (((user.value).toLowerCase() != possibility1) && ((user.value).toLowerCase() != possibility2) && ((user.value).toLowerCase() != possibility3)) {
+    window.alert("Please refresh the page and choose between 'Rock', 'Paper' or 'Scissors'")
+   } else if ((user.value).toLowerCase() == possibility1 && computerChoice == 0) {
         document.getElementById("result").innerHTML = "It's a Draw"; 
     }  else if ((user.value).toLowerCase() == possibility2 && computerChoice == 0) {
         document.getElementById("result").innerHTML = "You Win! Paper beats rock!"; 
@@ -44,6 +44,7 @@ function send() {
         document.getElementById("result").innerHTML = "It's a Draw!";
     }
    
+    document.getElementById("refresh").innerHTML = "Don't forget to refresh the page &#128512"
 }
 
  
