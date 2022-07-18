@@ -1,69 +1,61 @@
-const possibility1 = "rock";
-const possibility2 = "paper";
-const possibility3 = "scissors";
+var computerChoice;
+var userChoice;
+const buttons = document.querySelectorAll('button');
+let playerCounter = 0;
+let compCounter = 0;
 
-/* ======================== DIDN'T WORK ===============
-function computer() { 
-    var computerChoice = [Math.floor(Math.random() * 2)];
 
-    if (computerChoice == 0) {
-       computerChoice = possibility1;
-       document.getElementById("computer").innerHTML = computerChoice;
-    } else if (computerChoice == 1) {
-       computerChoice = possibility2;
-       document.getElementById("computer").innerHTML = computerChoice;
-    } else if (computerChoice == 2) {
-       computerChoice = possibility3
-       document.getElementById("computer").innerHTML = computerChoice;
+buttons.forEach(button => button.addEventListener('click', (e) => {
+  userChoice = e.target.id;
+ // console.log("userChoice at forEach: " + userChoice);
+  document.getElementById("userclicked").innerHTML = userChoice;
+  computerPlay();
+  result();
+ })); // end of forEach
+
+function computerPlay() {
+    random = [Math.floor(Math.random() * 3)];
+    if (random == 0) {
+       computerChoice = 'rock';
+    } else if (random == 1) {
+       computerChoice = 'paper';
+    } else if (random == 2) {
+       computerChoice = 'scissors'
+    }
+  //  console.log("ComputerChoice at computerPlay(): " + computerChoice);
+    document.getElementById("computer").innerHTML = computerChoice;
+
+} // end of function computerPlay()
+
+function result() {
+    console.log("At result: " + userChoice + " x " + computerChoice)
+
+    if (userChoice == computerChoice) {
+     //   console.log("It's a draw! Nobody get points.");
+        document.getElementById('result').innerHTML = "It's a draw! Nobody get points." 
+        document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
+    } else if ((userChoice == 'rock' && computerChoice == 'scissors') || (userChoice == 'paper' && computerChoice == 'rock') || (userChoice == 'scissors' && computerChoice == 'paper')) {
+     //   console.log("You win!");
+        playerCounter++;
+        document.getElementById('result').innerHTML = "User wins!";
+        document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
+    } else if ((computerChoice == 'rock' && userChoice == 'scissors') || (computerChoice == 'paper' && userChoice == 'rock') || (computerChoice == 'scissors' && userChoice == 'paper')) {
+     //   console.log("Computer wins");
+        compCounter++;
+        document.getElementById('result').innerHTML = "Computer wins!"
+        document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     }
 
-}*/
-
-
-function send() { // =============================== WORKS JUST FINE ============================
- var computerChoice = [Math.floor(Math.random() * 3)];
-
- if (computerChoice == 0) {
-    computerChoice = possibility1;
-    document.getElementById("computer").innerHTML = computerChoice;
- } else if (computerChoice == 1) {
-    computerChoice = possibility2;
-    document.getElementById("computer").innerHTML = computerChoice;
- } else if (computerChoice == 2) {
-    computerChoice = possibility3
-    document.getElementById("computer").innerHTML = computerChoice;
- }
-
-var userTyped = document.getElementById("user").value;
+    for (let i = 0; i < 6; i++) {
+       if (playerCounter == 5 || compCounter == 5) {
+            break;
+         if (playerCounter > compCounter) {
+            document.getElementById('result').innerHTML = "The winner is YOU! Congrats!"
+         } else if (compCounter > playerCounter) {
+            document.getElementById('result').innerHTML = "The winner is the Computer! Bad luck today!"
+         }
+        }
+    } 
     
-   if (((user.value).toLowerCase() != possibility1) && ((user.value).toLowerCase() != possibility2) && ((user.value).toLowerCase() != possibility3)) {
-    window.alert("Please refresh the page and choose between 'Rock', 'Paper' or 'Scissors'")
-   } else if ((user.value).toLowerCase() == possibility1 && computerChoice == possibility1) {
-        document.getElementById("result").innerHTML = "It's a Draw"; 
-    }  else if ((user.value).toLowerCase() == possibility2 && computerChoice == possibility1) {
-        document.getElementById("result").innerHTML = "You Win! Paper beats rock!"; 
-    } else if ((user.value).toLowerCase() == possibility3 && computerChoice == possibility1) {
-        document.getElementById("result").innerHTML = "Computer Wins! Rock beats scissor!"; 
-    }  else if ((user.value).toLowerCase() == possibility1 && computerChoice == possibility2) {
-        document.getElementById("result").innerHTML = "Computer Wins! Paper beats rock!";  
-    } else if ((user.value).toLowerCase() == possibility2 && computerChoice == possibility2) {
-        document.getElementById("result").innerHTML = "It's a draw!"; 
-    }   else if ((user.value).toLowerCase() == possibility3 && computerChoice == possibility2) {
-        document.getElementById("result").innerHTML = "You Win! Scissors beat paper!"; 
-    } else if ((user.value).toLowerCase() == possibility1 && computerChoice == possibility3) {
-        document.getElementById("result").innerHTML = "You Win! Rock beats scissor!"; 
-    } else if ((user.value).toLowerCase() == possibility2 && computerChoice == possibility3) {
-        document.getElementById("result").innerHTML = "Computer Wins! Scissors beat paper!";  
-    } else if ((user.value).toLowerCase() == possibility3 && computerChoice == possibility3) {
-        document.getElementById("result").innerHTML = "It's a Draw!";
-    }
-   
-    document.getElementById("refresh").innerHTML = "Don't forget to refresh the page &#128512";
-
-    console.log("User chose: "+userTyped)
-    console.log("Computer chose: " + computerChoice)
-}
-
+} // end of function result
  
-
-

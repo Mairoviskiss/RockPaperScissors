@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>Rock Paper Scissors</title>
     
    
 </head>
 
 <body>
 
-  <h2>User: <input type="text" id="user" class="choice"> <button type="button" value="click" class="submit" onclick="send()">Submit</button> </h2>
+  <h2>Make your choice: <span id="userclicked"></span></h2>  
+  <button type="button" id="paper"  >Paper</button>
+  <button type="button" id="rock" >Rock</button>
+  <button type="button" id="scissors" >Scissors</button>
+
   <h2>Computer: <span id="computer" class="choice"></span> </h2>
   <h2>Result: <span id="result"></span></h2>
-  <div id="refresh" style="padding: 5px; font-size: 20px;" ></div>
+  <h2 id="points"></h2>
+
 
   <script src="index.js"></script>
 </body>
