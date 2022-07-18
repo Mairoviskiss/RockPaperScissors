@@ -46,6 +46,23 @@ function result() {
         document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     }
 
+/* DOESN'T WORK. JUST AN IDEA
+    for (playerCounter = 0; playerCounter < 6; playerCounter++) {
+        if (playerCounter == 5) {
+            break;
+        }
+    }
+
+    for (compCounter = 0; compCounter < 6; compCounter++) {
+        if (compCounter == 5) {
+            break;
+        }
+    }  
+
+*/
+  
+
+    /* DOESN'T WORK. jUST AN IDEA
     for (let i = 0; i < 6; i++) {
        if (playerCounter == 5 || compCounter == 5) {
             break;
@@ -55,7 +72,7 @@ function result() {
             document.getElementById('result').innerHTML = "The winner is the Computer! Bad luck today!"
          }
         }
-    } 
+    } */
     
 } // end of function result
  
