@@ -29,6 +29,7 @@ function computerPlay() {
 
 
 function winner() {
+ 
     if (playerCounter == 5) {
      document.getElementById('points').innerHTML = "You are the best! Congratulations! You won by " + playerCounter + " x " + compCounter + " points"
      window.alert("You are the best! Congratulations! You won by " + playerCounter + " x " + compCounter + " points"); 
@@ -41,13 +42,12 @@ function winner() {
     if (compCounter == 5) {
       document.getElementById('points').innerHTML = "Sorry, you lost. Computer won by " + compCounter + " x " + playerCounter + " points"
       window.alert("Sorry, you lost. Computer won by " + compCounter + " x " + playerCounter + " points");
-      
       if (confirm("Click 'ok' to reload the page") == true) {
        location.reload();
       }
     
     } //end of second if condition
-      
+
 } //end of winner()
 
 
