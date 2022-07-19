@@ -7,11 +7,11 @@ let compCounter = 0;
 
 buttons.forEach(button => button.addEventListener('click', (e) => {
   userChoice = e.target.id;
- // console.log("userChoice at forEach: " + userChoice);
   document.getElementById("userclicked").innerHTML = userChoice;
   computerPlay();
   result();
  })); // end of forEach
+
 
 function computerPlay() {
     random = [Math.floor(Math.random() * 3)];
@@ -22,10 +22,35 @@ function computerPlay() {
     } else if (random == 2) {
        computerChoice = 'scissors'
     }
-  //  console.log("ComputerChoice at computerPlay(): " + computerChoice);
+
     document.getElementById("computer").innerHTML = computerChoice;
 
 } // end of function computerPlay()
+
+
+function winner() {
+    if (playerCounter == 5) {
+     document.getElementById('points').innerHTML = "You are the best! Congratulations! You won by " + playerCounter + " x " + compCounter + " points"
+     window.alert("You are the best! Congratulations! You won by " + playerCounter + " x " + compCounter + " points"); 
+      if (confirm("Click 'ok' to reload the page") == true) {
+       location.reload();
+      } 
+    } //end of first if condition
+    
+      
+    if (compCounter == 5) {
+      document.getElementById('points').innerHTML = "Sorry, you lost. Computer won by " + compCounter + " x " + playerCounter + " points"
+      window.alert("Sorry, you lost. Computer won by " + compCounter + " x " + playerCounter + " points");
+      
+      if (confirm("Click 'ok' to reload the page") == true) {
+       location.reload();
+      }
+    
+    } //end of second if condition
+      
+} //end of winner()
+
+
 
 function result() {
     console.log("At result: " + userChoice + " x " + computerChoice)
@@ -46,33 +71,14 @@ function result() {
         document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     }
 
-/* DOESN'T WORK. JUST AN IDEA
-    for (playerCounter = 0; playerCounter < 6; playerCounter++) {
-        if (playerCounter == 5) {
-            break;
-        }
-    }
-
-    for (compCounter = 0; compCounter < 6; compCounter++) {
-        if (compCounter == 5) {
-            break;
-        }
-    }  
-
-*/
-  
-
-    /* DOESN'T WORK. jUST AN IDEA
-    for (let i = 0; i < 6; i++) {
-       if (playerCounter == 5 || compCounter == 5) {
-            break;
-         if (playerCounter > compCounter) {
-            document.getElementById('result').innerHTML = "The winner is YOU! Congrats!"
-         } else if (compCounter > playerCounter) {
-            document.getElementById('result').innerHTML = "The winner is the Computer! Bad luck today!"
-         }
-        }
-    } */
     
+    winner();
+    
+    
+  
 } // end of function result
+
+
+
+
  
