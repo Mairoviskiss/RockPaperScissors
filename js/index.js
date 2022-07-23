@@ -67,7 +67,8 @@ function result() {
         document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     }
 
-    /*
+
+    
 /* ======================= code for the images NOT WORING ================================================================================================================
 
   var img = document.createElement("img");
