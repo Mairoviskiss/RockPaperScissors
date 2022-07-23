@@ -56,22 +56,60 @@ function result() {
     console.log("At result: " + userChoice + " x " + computerChoice)
 
     if (userChoice == computerChoice) {
-     //   console.log("It's a draw! Nobody get points.");
         document.getElementById('result').innerHTML = "It's a draw! Nobody get points." 
         document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     } else if ((userChoice == 'rock' && computerChoice == 'scissors') || (userChoice == 'paper' && computerChoice == 'rock') || (userChoice == 'scissors' && computerChoice == 'paper')) {
-     //   console.log("You win!");
         playerCounter++;
         document.getElementById('result').innerHTML = "User wins!";
         document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     } else if ((computerChoice == 'rock' && userChoice == 'scissors') || (computerChoice == 'paper' && userChoice == 'rock') || (computerChoice == 'scissors' && userChoice == 'paper')) {
-     //   console.log("Computer wins");
         compCounter++;
         document.getElementById('result').innerHTML = "Computer wins!"
         document.getElementById('points').innerHTML = "You: "+ playerCounter + " x Computer: " + compCounter;
     }
 
-    
+    /*
+/* ======================= code for the images NOT WORING ================================================================================================================
+
+  var img = document.createElement("img");
+
+  /* ================================ DRAWS ============================================================================================= 
+    if (userChoice == 'rock' && computerChoice == 'rock') {
+     img.src = "./images/drawrock.jpg";
+    var div = document.getElementById("resultimg");
+    div.appendChild(img);
+    } else if (userChoice == 'paper' && computerChoice =='paper') {
+        img.src = "./images/drawpaper.png";
+        var div = document.getElementById("resultimg");
+        div.appendChild(img);
+    } else if (userChoice == 'scissors' && computerChoice =='scissors') {
+        img.src = "./images/drawscissors.png";
+        var div = document.getElementById("resultimg");
+        div.appendChild(img);
+    } else if
+
+ /* =============================== PAPER BEATS ROCK ========================================================================================================
+    (userChoice == 'rock' && computerChoice == 'paper'|| computerChoice == 'rock' && userChoice == 'paper') {
+     img.src = "./images/paperbeatsrock.jpg";
+     var div = document.getElementById("resultimg");
+     div.appendChild(img);
+    } else if 
+
+ /* ===========================================  ROCK BEATS SCISSORS ========================================================================================
+    (userChoice == 'rock' && computerChoice == 'scissors'|| computerChoice == 'rock' && userChoice == 'scissors') {
+    img.src = "./images/rockbeatsscissors.jpg";
+    var div = document.getElementById("resultimg");
+    div.appendChild(img);
+    } else if
+
+/* ============================================== SCISSORS BEAT PAPER =========================================================================================
+   (userChoice == 'paper' && computerChoice == 'scissors'|| computerChoice == 'paper' && userChoice == 'scissors') {
+    img.src = "./images/scissorsbeatpaper.jpg";
+    var div = document.getElementById("resultimg");
+    div.appendChild(img);
+    }
+
+*/
     winner();
     
     
