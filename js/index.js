@@ -68,7 +68,14 @@ function result() {
     }
 
 
-    
+    winner();
+
+
+
+
+
+
+
 /* ======================= code for the images NOT WORING ================================================================================================================
 
   var img = document.createElement("img");
@@ -110,9 +117,7 @@ function result() {
     }
 
 */
-    winner();
-    
-    
+   
   
 } // end of function result
 
