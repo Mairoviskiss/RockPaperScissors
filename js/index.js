@@ -51,7 +51,6 @@ function winner() {
 } //end of winner()
 
 
-
 function result() {
     console.log("At result: " + userChoice + " x " + computerChoice)
 
